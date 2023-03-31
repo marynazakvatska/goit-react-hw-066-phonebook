@@ -3,15 +3,15 @@ import { nanoid } from 'nanoid'
 import ContactList from "./ContactList";
 import Form from "./Form";
 import Filter from "./Filter";
-import useLocalStorage from "hooks/hooks";
+/* import useLocalStorage from "hooks/hooks";
 import { useDispatch, useSelector } from "react-redux";
-import { addContact, deleteContact, changeFilter } from "redux/actions";
+import { addContact, deleteContact, changeFilter } from "redux/actions"; */
 
 
 
 
 export function App() {
-  const dispatch = useDispatch();
+/*   const dispatch = useDispatch(); */
 
   /*  const [contacts, setContacts] = useLocalStorage('contacts', 
   [

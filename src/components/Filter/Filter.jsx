@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import css from './Filter.module.css'
 import { useSelector, useDispatch } from 'react-redux';
 import { changeFilter } from 'redux/filterSlice';
+import { getFilter } from 'redux/selectors';
+
 
 const Filter = (/* {value, onChange} */) => {
-  const value = useSelector();
+  const value = useSelector(getFilter);
   const dispatch = useDispatch()
     
 
