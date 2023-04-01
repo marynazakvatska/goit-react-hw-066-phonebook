@@ -21,8 +21,8 @@ const contactSlice = createSlice({
       prepare({name, number}) {
         return {
           payload: {
-                name: '',
-                number: "",
+                name,
+                number,
             id: nanoid(),
           },
         };
@@ -38,6 +38,6 @@ const contactSlice = createSlice({
 
 
 
-export const { addContact, deleteContact } = contactSlice.actions;
+export const { addContacts, deleteContact } = contactSlice.actions;
 export const contactsReducer = contactSlice.reducer;
 
