@@ -11,8 +11,8 @@ const ContactList = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts);
   const filter = useSelector(state => state.filter)
-  console.log(contacts)
-   console.log(filter)
+  /* console.log(contacts)
+   console.log(filter) */
 
 
   const getVisisbleContacts = () => {
