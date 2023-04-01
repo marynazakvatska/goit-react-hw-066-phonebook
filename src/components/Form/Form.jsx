@@ -1,4 +1,5 @@
 import css from './Form.module.css'
+import { nanoid } from 'nanoid'
 import {useState} from "react";
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contactsSlice';
@@ -10,6 +11,9 @@ export default function Form(/* { onSubmit } */) {
  
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+
+ const nameInputId = nanoid();
+   const numberInputId = nanoid();
 
 
     const handleNameChange = e => {
@@ -51,7 +55,8 @@ export default function Form(/* { onSubmit } */) {
              <label className={css.label}>Name 
                <input className={css.input}
                  value={name}
-        onChange={handleNameChange}
+                onChange={handleNameChange}
+                 id={nameInputId}
            type="text"
            name="name"
            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -69,7 +74,8 @@ export default function Form(/* { onSubmit } */) {
  <label className={css.label}> Number 
                <input className={css.input}
                    value={number}
-        onChange={handleNameChange}
+                onChange={handleNameChange}
+                 id={numberInputId}
   type="tel"
   name="number"
   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
