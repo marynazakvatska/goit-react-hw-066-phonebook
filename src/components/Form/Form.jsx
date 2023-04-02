@@ -31,10 +31,10 @@ export default function Form() {
     
    const handleSubmit = e => {
         e.preventDefault()
-         if (contacts.find(contact => contact.name.toLowerCase() === e.currectTarget)) {
+         if (contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase())) {
 
-        alert(` '${e.currectTarget}' is already in your list`)
-        return contacts;
+        alert(` '${name}' is already in your list`)
+       return  
     }
    
      dispatch(addContacts({name, number}))

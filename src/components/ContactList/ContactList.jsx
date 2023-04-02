@@ -2,7 +2,7 @@
 import css from './ContactList.module.css'
 import { useDispatch, useSelector } from "react-redux";
 import { deleteContact } from 'redux/contactsSlice';
-import { getContacts, getFilter } from 'redux/selectors';
+/* import { getContacts, getFilter } from 'redux/selectors'; */
 import { getVisibleContacts } from 'redux/selectors';
 
 
@@ -14,17 +14,6 @@ const ContactList = () => {
   const contacts = useSelector(getVisibleContacts);
   
  
-/*   
-
-  const getVisisbleContacts = () => {
-    const normalizeContacts = filter.toLowerCase();
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizeContacts)
-    )
-   
-  } */
-
-  
  
     return (<ul className={css.list_contacts}>
   
