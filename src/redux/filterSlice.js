@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+/* import { createSlice } from "@reduxjs/toolkit";
 
 
 const filterInitialState = "";
@@ -16,7 +16,7 @@ const filtersSlice = createSlice({
 // Експортуємо генератори екшенів та редюсер
 export const {changeFilter} = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;
-
+ */
 
 
 

@@ -2,18 +2,19 @@
 import css from './ContactList.module.css'
 import { useDispatch, useSelector } from "react-redux";
 import { deleteContact } from 'redux/contactsSlice';
+import { getContacts, getFilter } from 'redux/selectors';
+import { getVisibleContacts } from 'redux/selectors';
+
 
 
 const ContactList = () => {
 
-/*   contacts={dispatch(getVisisbleContacts())} onDelete={dispatch(deleteContact) */
 
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts);
-  const filter = useSelector(state => state.filter)
-  /* console.log(contacts)
-   console.log(filter) */
-
+  const contacts = useSelector(getVisibleContacts);
+  
+ 
+/*   
 
   const getVisisbleContacts = () => {
     const normalizeContacts = filter.toLowerCase();
@@ -21,13 +22,13 @@ const ContactList = () => {
       contact.name.toLowerCase().includes(normalizeContacts)
     )
    
-  }
+  } */
 
   
  
     return (<ul className={css.list_contacts}>
-    {/*   {contacts.map(({ id, name, number }) => { */}
-        {dispatch(getVisisbleContacts).map(({ id, name, number }) => {
+  
+        {contacts.map(({ id, name, number }) => {
           return  (
                 <li className={css.element} key={id}>
                     <p >{name} :</p> <p className={css.number}>{number}</p>

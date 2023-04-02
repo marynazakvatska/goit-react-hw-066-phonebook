@@ -1,12 +1,14 @@
 import css from './Form.module.css'
 import {useState} from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContacts } from 'redux/contactsSlice';
+import { getContacts } from 'redux/selectors';
 
 
 
 export default function Form() {
   const dispatch = useDispatch();
+  const contacts = useSelector(getContacts)
  
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -30,6 +32,8 @@ export default function Form() {
    const handleSubmit = e => {
         e.preventDefault()
     
+  
+   
      dispatch(addContacts({name, number}))
         reset()
     }
@@ -44,8 +48,6 @@ export default function Form() {
 
    
         return (
-             
-        
           <form className={css.form} onSubmit={handleSubmit}>  
              <label className={css.label}>Name 
                <input className={css.input}
@@ -89,8 +91,3 @@ export default function Form() {
 }
 
 
-/* Form.propTypes = {
-  
-  onSubmit: PropTypes.func,
-
-} */
